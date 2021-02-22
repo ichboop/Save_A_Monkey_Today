@@ -1,12 +1,44 @@
-.navbar-lewagon {
+.navbar {
+  color: rgb(41, 41, 41);
+  background-color: rgba(255, 255, 255, 0.808);
+  display: flex;
   justify-content: space-between;
-  background: white;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: bolder;
+  border-radius: 0px 0px 6px 5px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #7979797e, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar p {
+  margin-bottom: 0;
+  color: rgba(41, 41, 41, 0.541);
+}
+.navbar p:hover {
+  color: rgb(41, 41, 41);
+  cursor: pointer;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-heart {
+  font-size: 35px;
+}
+
+.logo-banner h5 {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.logo-banner {
+  margin-bottom: 0;
+  color: rgba(41, 41, 41, 0.541);
+}
+.logo-banner:hover {
+  color: rgb(41, 41, 41);
+  cursor: pointer;
 }
