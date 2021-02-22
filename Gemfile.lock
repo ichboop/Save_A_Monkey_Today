@@ -235,7 +235,6 @@ GEM
 PLATFORMS
   ruby
 
-
 DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.4.2)
