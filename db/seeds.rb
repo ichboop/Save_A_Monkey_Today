@@ -19,9 +19,14 @@ users = []
 end
 
 users.each do |user|
-    Monkey.create(
+    monkey = Monkey.create(
     name: Faker::Creature::Animal.name,
     species: "gorilla",
     city: Faker::Nation.capital_city,
     user_id: user.id)
+    Getaway.create(
+      date: Date.new(2001,2,3),
+      monkey_id: monkey.id,
+      user_id: user.id
+    )
 end
