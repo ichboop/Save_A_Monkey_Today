@@ -4,5 +4,6 @@ class MonkeysController < ApplicationController
   end
 
   def show
+    @monkey = Monkey.find(params[:id])
   end
 end
