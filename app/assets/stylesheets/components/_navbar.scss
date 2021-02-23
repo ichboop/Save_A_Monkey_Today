@@ -69,3 +69,17 @@
 a:-webkit-any-link {
   text-decoration: none;
 }
+
+.dropdown-menu {
+  position: absolute !important;
+  right: -5px !important;
+  left: unset !important;
+  padding: 0;
+  border: unset !important;
+  background-color: rgba(255, 255, 255, 0.932);
+  text-align: right;
+}
+
+.dropdown-item {
+  color: #242424c0;
+}
