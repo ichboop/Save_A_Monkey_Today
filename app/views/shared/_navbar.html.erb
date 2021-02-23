@@ -1,0 +1,34 @@
+<div class="navbar">
+  <%= link_to root_path do %>
+    <div class="logo-banner">
+      <i class="far fa-heart"></i>
+      <h5>Save A Monkey Today</h5>
+    </div>
+  <% end %>
+  <div class="nav-bar-user">
+  <ul class="navbar-nav mr-auto">
+    <%if user_signed_in? %>
+      <li class="nav-item active">
+        <%= link_to "Home", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Bookings", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to current_user.email, '#', class: "nav-link" %>
+      </li>
+          <li class="nav-item dropdown">
+          <%= image_tag "https://source.unsplash.com/random/1200x1200", class: "avatar dropdown", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': false, 'aria-expanded': false %>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+
