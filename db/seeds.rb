@@ -31,4 +31,11 @@ users.each do |user|
       monkey_id: monkey.id,
       user_id: user.id
     )
+    if user.id == 35
+      Getaway.create(
+        date: Date.new(2001,2,3),
+        monkey_id: monkey.id,
+        user_id: user.id
+      )
+    end
 end
