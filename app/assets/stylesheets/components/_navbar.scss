@@ -10,13 +10,26 @@
   box-shadow: 0px 10px 13px -7px #7979797e, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
-.navbar p {
+.navbar p,
+.nav-link {
   margin-bottom: 0;
   color: rgba(41, 41, 41, 0.541);
 }
-.navbar p:hover {
+.navbar p:hover,
+.nav-link:hover,
+.nav-item img {
   color: rgb(41, 41, 41);
   cursor: pointer;
+}
+
+.navbar-nav {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  padding-left: 19px;
 }
 
 .logo-banner {
@@ -51,4 +64,8 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
 }
