@@ -1,6 +1,6 @@
-a, li, ul {
+body,a, li, ul {
   list-style-type: none;
-  line-height: 0;
+  line-height: 1;
 }
 
 .show-page {
@@ -11,12 +11,15 @@ a, li, ul {
   margin-top: 15px;
 }
 
+.col-sm-7 {
+  padding-right: 0px !important;
+}
+
 .monkey-description {
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: flex-start;
-  padding-left: 0px;
 }
 
 .monkey-description ul {
@@ -31,15 +34,18 @@ a, li, ul {
 }
 
 .monkey-species {
-  padding-top: 0px;
+  color: rgba(53, 53, 53, 0.788);
+  font-weight: bold;
   font-size: 30px;
 }
 
 .monkey-city {
+  color: rgb(99, 99, 99);
+  padding-top: 8px;
   padding-bottom: 45px;
 }
 
-.col-sm-4.monkey-description {
+.col-sm-5.monkey-description {
   padding-left: 0 !important;
 }
 
@@ -48,7 +54,7 @@ a, li, ul {
 }
 
 .rescue-button {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .img-gallery {
@@ -61,7 +67,7 @@ a, li, ul {
 
 .pic-main {
   width: 90%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -94,3 +100,4 @@ a, li, ul {
   background-position: center;
   height: 200px;
 }
+
