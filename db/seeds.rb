@@ -8,20 +8,20 @@ require "faker"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
 Monkey.destroy_all
+User.destroy_all
 
-user = 30.times do
-    User.create(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password)
+users = []
+30.times do
+  users << User.create(
+  email: Faker::Internet.email,
+  password: Faker::Internet.password)
 end
-p user
 
-30.times do 
-  monkey = Monkey.create(
+users.each do |user|
+    Monkey.create(
     name: Faker::Creature::Animal.name,
-    species: Faker::Creature::Dog.gender,
+    species: "gorilla",
     city: Faker::Nation.capital_city,
-    user_id: rand(1..30))
+    user_id: user.id)
 end
