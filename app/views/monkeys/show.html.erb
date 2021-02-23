@@ -1,26 +1,24 @@
-<div class="container">
+<div class="container show-page">
   <div class="row">
-    <div class="col-sm-8">
-    <%= image_tag("https://source.unsplash.com/random/600x400") %>
+    <div class="col-sm-7">
+    <%= image_tag("monkey-fam.jpg", class: 'rounded pic-main') %>
     </div>
-    <div class="col-sm-4">
-      <ul>
-        <li><%= @monkey.name %></li>
-        <li><%= @monkey.species %></li>
-        <li><%= @monkey.city %></li>
-      </ul>
-      <%= link_to "Rescue Monkey", monkey_getaway_path(@monkey)  %>
+    <div class="col-sm-5 monkey-description">
+        <div class="monkey-name"><%= @monkey.name %></div>
+        <div class="monkey-species"><%= @monkey.species %></div>
+        <div class="monkey-city">Location: <%= @monkey.city %></div>
+        <div class="monkey-description"><%= @monkey.description %></div>
+      
+        <%= link_to "Rescue Monkey", monkey_getaways_path(@monkey), class: 'rescue-button btn btn-primary'  %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm">
-      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+  <div class="container img-gallery">
+    <div class="img-1 rounded">
     </div>
-    <div class="col-sm">
-      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+    <div class="img-2 rounded">
     </div>
-    <div class="col-sm">
-      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+    <div class="img-3 rounded">
+    </div>
+    <div class="img-4 rounded">
     </div>
   </div>
-</div>
