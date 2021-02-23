@@ -1,2 +1,26 @@
-<h1>Monkeys#show</h1>
-<p>Find me in app/views/monkeys/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+    <%= image_tag("https://source.unsplash.com/random/600x400") %>
+    </div>
+    <div class="col-sm-4">
+      <ul>
+        <li><%= @monkey.name %></li>
+        <li><%= @monkey.species %></li>
+        <li><%= @monkey.city %></li>
+      </ul>
+      <%= link_to "Rescue Monkey", monkey_getaway_path(@monkey)  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+    </div>
+    <div class="col-sm">
+      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+    </div>
+    <div class="col-sm">
+      <%= image_tag("https://source.unsplash.com/random/300x300") %>
+    </div>
+  </div>
+</div>
