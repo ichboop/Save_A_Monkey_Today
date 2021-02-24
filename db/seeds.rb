@@ -17,7 +17,7 @@ users = []
 30.times do
   users << User.create(
   email: Faker::Internet.email,
-  password: Faker::Internet.password)
+  password: "123456")
 end
 
 puts "Users created!"
