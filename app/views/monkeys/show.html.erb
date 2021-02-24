@@ -30,7 +30,7 @@
         <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
         <div class="monkey-description"><%= @monkey.description %></div>
       
-        <%= link_to "Rescue Monkey", monkey_getaway_path(@monkey.id), class: 'rescue-button btn btn-primary'  %>
+        <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
     </div>
   </div>
   <div class="container img-gallery">
