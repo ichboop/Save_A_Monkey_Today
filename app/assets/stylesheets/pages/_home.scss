@@ -67,6 +67,7 @@ form.searchbar input[type=text] {
   background: #f1f1f1;
   border-radius: 25px 0 0 25px;
   border-right: none;
+  height: 79px;
   &::-webkit-input-placeholder {
     color: #cc561e;
   }
@@ -96,6 +97,7 @@ form.searchbar button {
   border-left: none; /* Prevent double borders */
   cursor: pointer;
   border-radius: 0 25px 25px 0;
+  height: 79px;
   &.icon-monkey{
     display: none;
   }
