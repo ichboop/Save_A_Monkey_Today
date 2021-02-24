@@ -1,5 +1,5 @@
 class GetawaysController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  #skip_before_action :authenticate_user!, only: [:index]
 
   def index 
     #@getaways = Getaway.where(user_id: 455)
