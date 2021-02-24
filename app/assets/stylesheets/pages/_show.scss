@@ -1,0 +1,103 @@
+body,a, li, ul {
+  list-style-type: none;
+  line-height: 1;
+}
+
+.show-page {
+  margin-top: 15px;
+}
+
+.small-pic {
+  margin-top: 15px;
+}
+
+.col-sm-7 {
+  padding-right: 0px !important;
+}
+
+.monkey-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.monkey-description ul {
+  padding-top: 0px;
+  padding-left: 0px;
+}
+
+.monkey-name {
+  font-size: 60px;
+  font-weight: bolder;
+  padding-top: 0;
+}
+
+.monkey-species {
+  color: rgba(53, 53, 53, 0.788);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.monkey-city {
+  color: rgb(99, 99, 99);
+  padding-top: 8px;
+  padding-bottom: 45px;
+}
+
+.col-sm-5.monkey-description {
+  padding-left: 0 !important;
+}
+
+.col-sm-8 {
+  padding-right: 0px !important;
+}
+
+.rescue-button {
+  margin-top: 40px;
+}
+
+.img-gallery {
+  display: flex;
+  flex-direction: row;
+  padding-top: 12px;
+  padding-left: 0px;
+  justify-content: space-between;
+}
+
+.pic-main {
+  width: 90%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.img-1{
+  width: 24%;
+  background-image: asset-url('monkey-fam.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.img-2{
+  width: 24%;
+  background-image: asset-url('monkey-hi.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+.img-3{
+  width: 24%;
+  background-image: asset-url('monkey-sad.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+.img-4{
+  width: 24%;
+  background-image: asset-url('monkey-mirror.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
