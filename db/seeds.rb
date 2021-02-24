@@ -27,7 +27,7 @@ monkeys = []
 
 users.each do |user|
     monkey = Monkey.create(
-    name: Faker::Creature::Animal.name,
+    name: Faker::Name.name,
     species: "gorilla",
     city: Faker::Nation.capital_city,
     description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
@@ -42,7 +42,7 @@ end
 
 puts " 1 monkey for each user created"
 puts "Creating random getaways..."
-puts monkeys[2].id
+
 200.times do 
   Getaway.create(
     date: Date.new(2001,2,3),
