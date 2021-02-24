@@ -8,6 +8,7 @@ require "faker"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Getaway.destroy_all
 Monkey.destroy_all
 User.destroy_all
 
@@ -19,9 +20,15 @@ users = []
 end
 
 users.each do |user|
-    Monkey.create(
+    monkey = Monkey.create(
     name: Faker::Creature::Animal.name,
     species: "gorilla",
     city: Faker::Nation.capital_city,
+    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
     user_id: user.id)
+    Getaway.create(
+      date: Date.new(2001,2,3),
+      monkey_id: monkey.id,
+      user_id: user.id
+    )
 end
