@@ -1,2 +1,20 @@
-<h1>Monkeys#index</h1>
-<p>Find me in app/views/monkeys/index.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>All Monkeys! in Berlin</h1>
+  </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center">Berlin</h2>
+    <div class="cards">
+      <% @monkeys.each do |monkey| %>
+      <div class="card">
+        <%= image_tag 'image_1.jpg', class: "mimg"%>
+        <h4><%= monkey.name %></h4>
+        <p class= "species"><%= monkey.species %></p>
+        <p><%= monkey.description %></p>
+        <%= link_to "Show Details", monkey_path(monkey), class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
