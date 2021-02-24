@@ -1,19 +1,19 @@
 .navbar {
   color: rgb(41, 41, 41);
-  background-color: rgba(255, 255, 255, 0.808);
+  background-color: #aa2b1d;
   display: flex;
   justify-content: space-between;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: bolder;
-  border-radius: 0px 0px 6px 5px;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   box-shadow: 0px 10px 13px -7px #7979797e, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .navbar p,
 .nav-link {
   margin-bottom: 0;
-  color: rgba(41, 41, 41, 0.541);
+  color: #ef8d32;
 }
 .navbar p:hover,
 .nav-link:hover,
@@ -49,14 +49,14 @@
 
 .logo-banner {
   margin-bottom: 0;
-  color: rgba(41, 41, 41, 0.541);
+  color: #ef8d32;
 }
 .logo-banner:hover {
   color: rgb(41, 41, 41);
   cursor: pointer;
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
   .navbar p { display: none;
   }
   .navbar {
