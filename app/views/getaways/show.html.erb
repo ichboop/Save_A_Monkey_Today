@@ -1,11 +1,11 @@
 <h1>Getaways#show</h1>
 <p>Find me in app/views/getaways/show.html.erb</p>
 <div class="container">
-
-    <% @monkeys.each do |monkey| %>
-      <div class="monkey-card">
-      <p><%= monkey.name  %></p>
-        </div>
-    <% end %>
-
+  <% @monkeys.each do |monkey| %>
+  <div class="monkey-card">
+    <p>Name: <%= monkey.name  %></p>
+    <p>Species <%= monkey.species %></p>
+    <p>City: <%= monkey.city %>
+  </div>
+<% end %>
 </div>
