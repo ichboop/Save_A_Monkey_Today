@@ -7,17 +7,23 @@ require "faker"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "Destorying the database..."
 Getaway.destroy_all
 Monkey.destroy_all
 User.destroy_all
-
+puts "Database destroyed!"
+puts "Creating the Users..."
 users = []
 30.times do
   users << User.create(
   email: Faker::Internet.email,
   password: Faker::Internet.password)
 end
+
+puts "Users created!"
+puts "Creating 1 monkey and 1 getaway for each user..."
+
+monkeys = []
 
 users.each do |user|
     monkey = Monkey.create(
@@ -31,4 +37,19 @@ users.each do |user|
       monkey_id: monkey.id,
       user_id: user.id
     )
+    monkeys << monkey
 end
+
+puts " 1 monkey for each user created"
+puts "Creating random getaways..."
+puts monkeys[2].id
+200.times do 
+  Getaway.create(
+    date: Date.new(2001,2,3),
+    monkey_id: monkeys[rand(0..monkeys.size - 1)].id,
+    user_id: users[rand(0..users.size - 1)].id
+  )
+end
+
+puts "Random Getaways created!"
+puts "Seed completed!!"
