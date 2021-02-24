@@ -3,10 +3,10 @@
   height: 100vh;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .container-home {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
 .carousel-inner {
 // object-fit: cover !important;
@@ -24,6 +24,7 @@ display: inline-block;
 .homeflex {
     display: flex;
     justify-content: space-around;
+    // flex-wrap: wrap;
     position: absolute;
     top: 200px;
     left: 10%;
@@ -45,11 +46,15 @@ display: inline-block;
         text-align: center;
     }
     width: 50%;
+    // flex: 1 1 50%;
+    // min-width: 500px;
   }
 
   &.map {
     background-color: white;
     width: 40%;
+    // flex: 1 1 40%;
+    // min-width: 400px;
   }
 }
 
@@ -96,7 +101,7 @@ form.searchbar button {
   }
 }
 form.searchbar button:hover {
-  background-color: #beca5c; /* Green */
+  // background-color: #beca5c; /* Green */
   color: #aa2b1d;
   height: 79px;
   display: flex;
@@ -109,14 +114,15 @@ form.searchbar button > .icon-monkey {
   }
 
 form.searchbar button:hover > .icon-monkey {
-  background: asset-url("running_monkey.png") no-repeat center center;
+  background: asset-url("monkey.svg") no-repeat center center;
   background-size: cover;
   display: inline-block;
-  height: 60px;
+  fill: #aa2b1d;
+  height: 150px;
   width: 100%;
-  transform: scale(1);
-  transition: all 0.5s ease;
-  margin-right: 20px;
+  transform: scale(0.4);
+  transition: all 1s ease;
+  // margin-right: 20px;
 }
 
 form.searchbar button > .fa-search {
@@ -125,8 +131,8 @@ form.searchbar button > .fa-search {
 }
 
 form.searchbar button:hover > .fa-search {
-  // transform: scale(0);
-  // transition: all 1s ease;
+  transform: scale(0);
+  transition: all 1s ease;
   display: none;
 }
 
