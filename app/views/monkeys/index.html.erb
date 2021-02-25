@@ -4,17 +4,28 @@
   </div>
 </div>
 
-<div class="container">
-    <h2 class="text-center">Berlin</h2>
-    <div class="cards">
-      <% @monkeys.each do |monkey| %>
-      <div class="card">
-        <%= image_tag 'image_1.jpg', class: "mimg"%>
-        <h4><%= monkey.name %></h4>
-        <p class= "species"><%= monkey.species %></p>
-        <p><%= monkey.description %></p>
-        <%= link_to "Show Details", monkey_path(monkey), class: "btn btn-primary" %>
-      </div>
-      <% end %>
+<div class="container mt-5">
+  <div class="content-index" justify-content="center">
+    <div >
+<!--       <h2 class="text-center">Berlin</h2>
+ --><!--       <div class="cards">
+ -->        <% @monkeys.each do |monkey| %>
+          <div class="card" margin-right="10000px">
+            <%= image_tag 'image_1.jpg', class: "mimg"%>
+            <h4><%= monkey.name %></h4>
+            <p class= "species"><%= monkey.species %></p>
+            <p><%= monkey.description %></p>
+            <%= link_to "Show Details", monkey_path(monkey), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+<!--       </div>
+ -->    </div>
+    <div id="map" style="width: 100%; height: 600px;" class="sticky"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">>
     </div>
   </div>
+</div>
+
+
+

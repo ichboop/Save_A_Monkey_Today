@@ -1,3 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+.content-index{
+  display: flex;
+}
+
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 80px;
+  z-index: 1;
+}

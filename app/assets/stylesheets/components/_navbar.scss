@@ -3,11 +3,14 @@
   background-color: #aa2b1d;
   display: flex;
   justify-content: space-between;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Bangers', sans-serif;
   font-weight: bolder;
   border-radius: 0px 0px 0px 0px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   box-shadow: 0px 10px 13px -7px #7979797e, 5px 5px 15px 5px rgba(0,0,0,0);
+  position: sticky;
+  top: 0;
+  z-index: 2000;
 }
 
 .navbar p,

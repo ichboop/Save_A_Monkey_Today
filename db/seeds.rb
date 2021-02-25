@@ -34,7 +34,7 @@ users.each do |user|
     city: Faker::Nation.capital_city,
     description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
     user_id: user.id,
-    address: '16 Villa Gaudelet, Paris')
+    address: Faker::Address.street_address)
     # longitude: Faker::Address.longitude,
     # latitude: Faker::Address.latitude)
     Getaway.create(
