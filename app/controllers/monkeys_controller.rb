@@ -12,7 +12,26 @@ class MonkeysController < ApplicationController
     # end
   end
 
+  def new
+
+  end
+
+  def create
+
+  end
+
   def show
     @monkey = Monkey.find(params[:id])
   end
+end
+
+def destroy
+end
+
+private
+
+def find_monkey
+end
+
+def monkey_params
 end
