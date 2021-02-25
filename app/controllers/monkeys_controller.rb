@@ -33,6 +33,8 @@ end
 
 def destroy
   find_monkey
+  @monkey.destroy
+  redirect_to monkeys_path
 end
 
 private
