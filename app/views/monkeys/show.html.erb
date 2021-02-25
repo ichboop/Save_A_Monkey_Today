@@ -20,7 +20,7 @@
   </a>
 </div>
     </div>
-    <div class="col-sm-5 monkey-description">
+  <div class="col-sm-5 monkey-description">
         <div class="monkey-name"><%= @monkey.name %></div>
         <div class="monkey-species"><%= @monkey.species %></div>
         <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
@@ -30,11 +30,10 @@
           <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
       
-        <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
-
-        <%= form_for(@getaway) do |f| %>
-        <%= f.hidden_field :monkey_id, value: @monkey.id %>
-          <%= f.submit "Rescue Monkey", class: 'rescue-button btn btn-primary'%>
+        <%= simple_form_for @getaway do |f| %>
+          <%= f.input :date, as: :string, label: false, input_html: {class: "datepicker"} %>
+          <%= f.hidden_field :monkey_id, value: @monkey.id %>
+          <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
         <% end %>
 
     </div>
