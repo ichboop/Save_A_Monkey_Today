@@ -8,6 +8,7 @@ class GetawaysController < ApplicationController
     @getaways.each do |getaway|
       @monkeys << Monkey.find(getaway.monkey_id)
     end
+    @monkeys.reverse
   end
   def show 
     @getaway = Getaway.create(
@@ -26,5 +27,6 @@ class GetawaysController < ApplicationController
       user_id: current_user.id
     )
     @getaway.save
+    redirect_to getaways_path
   end
 end
