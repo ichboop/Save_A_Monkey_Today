@@ -11,23 +11,29 @@ class GetawaysController < ApplicationController
     @monkeys.reverse
   end
   def show 
-    @getaway = Getaway.create(
-
-    )
+    @getaway = Getaway.create
   end
 
-  def new
-   
-  end
-
-  def create 
-    @getaway = Getaway.new(
-      date: params[:getaway]["date"],
-      monkey_id: params[:getaway]["monkey_id"],
-      user_id: current_user.id
-    )
-    if  @getaway.save
-      redirect_to getaways_path
+  def create
+    @monkey = Monkey.find(params[:getaway][:monkey_id])
+    @getaway = Getaway.new(create_getaway_params)
+    @getaway.monkey = @monkey
+    @getaway.user = current_user
+    if !@getaway.date?
+      redirect_to monkey_path(@monkey), alert: "please fill date"
+    else 
+      if @getaway.save
+      
+        redirect_to getaways_path
+      else
+        render "monkeys/show"
+      end
     end
+  end
+
+  private
+
+  def create_getaway_params
+    params.require(:getaway).permit(:date)
   end
 end
