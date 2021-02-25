@@ -37,7 +37,7 @@
         </button>
       </form>
     </div>
-    <div class="homeflex-item map"
+    <div id="map" class="homeflex-item map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       <p>Placeholder Map</p>

@@ -3,13 +3,13 @@ class MonkeysController < ApplicationController
   def index
     @monkeys = Monkey.all
 
-    # # the `geocoded` scope filters only monkeys with coordinates (latitude & longitude)
-    # @markers = @monkeys.geocoded.map do |monkey|
-    #   {
-    #     lat: monkey.latitude,
-    #     lng: monkey.longitude
-    #   }
-    # end
+    # the `geocoded` scope filters only monkeys with coordinates (latitude & longitude)
+    @markers = @monkeys.geocoded.map do |monkey|
+      {
+        lat: monkey.latitude,
+        lng: monkey.longitude
+      }
+    end
   end
 
   def show
