@@ -23,12 +23,14 @@ end
 puts "Users created!"
 puts "Creating 1 monkey and 1 getaway for each user..."
 
+monkeySpecies = ["Aye-aye", "Baboon", "Flying lemur", "Gibbon", "Gorilla", "Green monkey", "Lemur"]
+
 monkeys = []
 
 users.each do |user|
     monkey = Monkey.create(
     name: Faker::Name.name,
-    species: "gorilla",
+    species: monkeySpecies[rand(0..monkeySpecies.size - 1)],
     city: Faker::Nation.capital_city,
     description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
     user_id: user.id,

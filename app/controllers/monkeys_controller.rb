@@ -10,6 +10,12 @@ class MonkeysController < ApplicationController
         lng: monkey.longitude
       }
     end
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR species ILIKE :query"
+      @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @monkeys = Monkey.all
+    end
   end
 
   def show
