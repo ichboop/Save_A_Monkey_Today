@@ -33,7 +33,10 @@ users.each do |user|
     species: monkeySpecies[rand(0..monkeySpecies.size - 1)],
     city: Faker::Nation.capital_city,
     description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
-    user_id: user.id)
+    user_id: user.id,
+    address: Faker::Address.street_address)
+    # longitude: Faker::Address.longitude,
+    # latitude: Faker::Address.latitude)
     Getaway.create(
       date: Date.new(2001,2,3),
       monkey_id: monkey.id,
@@ -45,7 +48,7 @@ end
 puts " 1 monkey for each user created"
 puts "Creating random getaways..."
 
-200.times do 
+200.times do
   Getaway.create(
     date: Date.new(2001,2,3),
     monkey_id: monkeys[rand(0..monkeys.size - 1)].id,

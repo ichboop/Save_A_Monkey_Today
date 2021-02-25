@@ -29,18 +29,31 @@
   <div class="homeflex">
     <div class="homeflex-item title">
       <h1>Save a monkey today</h1>
-      <form class="searchbar" action="/monkeys">
+      <%= form_tag monkeys_path, method: :get, class:"searchbar" do %>
+      <%= text_field_tag :address,
+        params[:address],
+        class: "form-control",
+        placeholder: "Enter your city"
+      %>
+<!--   <div class="nav-search-button">
+ -->
+    <%= button_tag(type: "submit") do %>
+      <i class="fa fa-search"></i>
+      <div class="icon-monkey"> </div>
+      <% end %>
+    <% end %>
+    </div>
+      <!-- form class="searchbar" action="/monkeys">
         <input type="text" placeholder="Enter your city" name="search">
-        <button type="submit">
+       <button type="submit">
           <i class="fa fa-search"></i>
           <div class="icon-monkey"></div>
         </button>
       </form>
-    </div>
-    <div class="homeflex-item map"
+      -->
+    <div id="map" class="homeflex-item map mapboxgl-ctrl-geocoder--input"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      <p>Placeholder Map</p>
     </div>
   </div>
 </div>

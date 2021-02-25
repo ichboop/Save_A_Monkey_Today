@@ -26,6 +26,9 @@ require("channels")
 import "bootstrap";
 
 // geocoder
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 
 // Flatpickr
