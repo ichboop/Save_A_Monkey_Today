@@ -18,6 +18,7 @@ class MonkeysController < ApplicationController
 
   def create
     @monkey = Monkey.new(monkey_params)
+    @monkey.user_id = current_user.id
     if @monkey.save
       redirect_to monkey_path(@monkey)
     else
@@ -31,6 +32,7 @@ class MonkeysController < ApplicationController
 end
 
 def destroy
+  find_monkey
 end
 
 private
@@ -40,5 +42,5 @@ def find_monkey
 end
 
 def monkey_params
-  params.require(:monkey).permit(:name, :describtion, :species, :photo)
+  params.require(:monkey).permit(:name, :describtion, :species, :city, photos: [])
 end

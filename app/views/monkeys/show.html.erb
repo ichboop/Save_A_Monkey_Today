@@ -4,15 +4,11 @@
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner carousel-pic">
-    <div class="carousel-item active">
-      <%= image_tag("monkey-fam.jpg", class: 'rounded pic-main') %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag("monkey-hi.jpg", class: 'rounded pic-main') %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag("monkey-mirror.jpg", class: 'rounded pic-main') %>
-    </div>
+     <% @monkey.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+        <%= cl_image_tag photo.key, height: 444, width: 650, crop: :scale %>
+      </div>
+    <% end %>
   </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,12 +30,10 @@
     </div>
   </div>
   <div class="container img-gallery">
-    <div class="img-1 rounded">
-    </div>
-    <div class="img-2 rounded">
-    </div>
-    <div class="img-3 rounded">
-    </div>
-    <div class="img-4 rounded">
+    <% @monkey.photos.each do |photo| %>
+      <div class="rounded">
+        <%= cl_image_tag photo.key, height: 200, width: 262, crop: :scale %>
+      </div>
+    <% end %>
     </div>
   </div>

@@ -62,7 +62,10 @@ body,a, li, ul {
   flex-direction: row;
   padding-top: 12px;
   padding-left: 0px;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 30px;
+  width: 1200px;
+  overflow: scroll;
 }
 
 .pic-main {

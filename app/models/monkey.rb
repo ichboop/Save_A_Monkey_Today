@@ -1,7 +1,7 @@
 class Monkey < ApplicationRecord
   belongs_to :user
   has_many :getaways
-  has_one_attached :photo
+  has_many_attached :photos
   validates :name, presence: true, uniqueness: true
   validates :species, presence: true
   # geocoded_by :address
