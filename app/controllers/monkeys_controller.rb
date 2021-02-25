@@ -13,15 +13,20 @@ class MonkeysController < ApplicationController
   end
 
   def new
-
+    @monkey = Monkey.new
   end
 
   def create
-
+    @monkey = Monkey.new(monkey_params)
+    if @monkey.save
+      redirect_to monkey_path(@monkey)
+    else
+      render 'new'
+    end
   end
 
   def show
-    @monkey = Monkey.find(params[:id])
+    find_monkey
   end
 end
 
@@ -31,7 +36,9 @@ end
 private
 
 def find_monkey
+  @monkey = Monkey.find(params[:id])
 end
 
 def monkey_params
+  params.require(:monkey).permit(:name :describtion :species :photo)
 end
