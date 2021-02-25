@@ -21,10 +21,12 @@ class GetawaysController < ApplicationController
 
   def create 
     @getaway = Getaway.new(
-      date: Date.today,
+      date: params[:getaway]["date"],
       monkey_id: params[:getaway]["monkey_id"],
       user_id: current_user.id
     )
-    @getaway.save
+    if  @getaway.save
+      redirect_to getaways_path
+    end
   end
 end

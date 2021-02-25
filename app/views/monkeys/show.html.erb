@@ -24,16 +24,16 @@
   </a>
 </div>
     </div>
-    <div class="col-sm-5 monkey-description">
+  <div class="col-sm-5 monkey-description">
         <div class="monkey-name"><%= @monkey.name %></div>
         <div class="monkey-species"><%= @monkey.species %></div>
         <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
         <div class="monkey-description"><%= @monkey.description %></div>
       
-        <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
-        <%= form_for(@getaway) do |f| %>
-        <%= f.hidden_field :monkey_id, value: @monkey.id %>
-          <%= f.submit %>
+        <%= simple_form_for @getaway do |f| %>
+          <%= f.input :date, as: :string, label: false, input_html: {class: "datepicker"} %>
+          <%= f.hidden_field :monkey_id, value: @monkey.id %>
+          <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
         <% end %>
     </div>
   </div>
