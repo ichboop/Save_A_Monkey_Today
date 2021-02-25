@@ -20,6 +20,12 @@ class GetawaysController < ApplicationController
   end
 
   def create
-    raise
+    
+    @getaway = Getaway.new(
+      date: Date.today,
+      monkey_id: params[:getaway]["monkey_id"],
+      user_id: current_user.id
+    )
+    @getaway.save
   end
 end
