@@ -1,6 +1,6 @@
 class Monkey < ApplicationRecord
   belongs_to :user
-  has_many :getaways
+  has_many :getaways, dependent: :destroy
   has_many_attached :photos
   validates :name, presence: true, uniqueness: true
   validates :species, presence: true

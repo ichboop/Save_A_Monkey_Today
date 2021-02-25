@@ -29,20 +29,21 @@ class MonkeysController < ApplicationController
   def show
     find_monkey
   end
-end
 
-def destroy
-  find_monkey
-  @monkey.destroy
-  redirect_to monkeys_path
-end
+  def destroy
+    find_monkey
+    @monkey.destroy
+    redirect_to monkeys_path
+  end
 
-private
+  private
 
-def find_monkey
-  @monkey = Monkey.find(params[:id])
-end
+  def find_monkey
+    @monkey = Monkey.find(params[:id])
+  end
 
-def monkey_params
-  params.require(:monkey).permit(:name, :describtion, :species, :city, photos: [])
+  def monkey_params
+    params.require(:monkey).permit(:name, :describtion, :species, :city, photos: [])
+  end
+  
 end
