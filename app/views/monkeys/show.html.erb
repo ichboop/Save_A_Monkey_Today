@@ -25,10 +25,18 @@
         <div class="monkey-species"><%= @monkey.species %></div>
         <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
         <div class="monkey-description"><%= @monkey.description %></div>
+
         <div class= "buttons">
           <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
           <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
+      
+        <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
+        <%= form_for(@getaway) do |f| %>
+        <%= f.hidden_field :monkey_id, value: @monkey.id %>
+          <%= f.submit %>
+        <% end %>
+
     </div>
   </div>
   <div class="container img-gallery">

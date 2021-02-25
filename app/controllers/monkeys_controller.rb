@@ -10,6 +10,12 @@ class MonkeysController < ApplicationController
     #     lng: monkey.longitude
     #   }
     # end
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR species ILIKE :query"
+      @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @monkeys = Monkey.all
+    end
   end
 
   def new
@@ -40,6 +46,7 @@ class MonkeysController < ApplicationController
 
   def find_monkey
     @monkey = Monkey.find(params[:id])
+    @getaway = Getaway.new
   end
 
   def monkey_params
@@ -47,3 +54,4 @@ class MonkeysController < ApplicationController
   end
   
 end
+
