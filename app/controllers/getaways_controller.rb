@@ -10,17 +10,16 @@ class GetawaysController < ApplicationController
     end
   end
   def show 
+    @getaway = Getaway.create(
 
+    )
   end
 
   def new
-    @getaway = Getaway.new
+   
   end
 
   def create
-    user_id = params[:id]
-    monkey_id = params[:monkey_id]
     raise
-    @getaway = Getaway.create()
   end
 end

@@ -20,5 +20,11 @@ class MonkeysController < ApplicationController
 
   def show
     @monkey = Monkey.find(params[:id])
+    @getaway = Getaway.new
   end
+
+  def create 
+    
+  end
+  
 end

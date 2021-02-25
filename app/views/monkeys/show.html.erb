@@ -31,6 +31,10 @@
         <div class="monkey-description"><%= @monkey.description %></div>
       
         <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
+        <%= form_for(@getaway) do |f| %>
+        <%= f.hidden_field :monkey_id, value: monkey.id %>
+          <%= f.submit %>
+        <% end %>
     </div>
   </div>
   <div class="container img-gallery">
