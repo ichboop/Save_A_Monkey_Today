@@ -40,5 +40,5 @@ def find_monkey
 end
 
 def monkey_params
-  params.require(:monkey).permit(:name :describtion :species :photo)
+  params.require(:monkey).permit(:name, :describtion, :species, :photo)
 end
