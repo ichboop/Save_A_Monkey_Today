@@ -26,5 +26,6 @@ class GetawaysController < ApplicationController
       user_id: current_user.id
     )
     @getaway.save
+    redirect_to getaways_path
   end
 end
