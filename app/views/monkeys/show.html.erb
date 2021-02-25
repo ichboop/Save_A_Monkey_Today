@@ -4,15 +4,11 @@
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner carousel-pic">
-    <div class="carousel-item active">
-      <%= image_tag("monkey-fam.jpg", class: 'rounded pic-main') %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag("monkey-hi.jpg", class: 'rounded pic-main') %>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag("monkey-mirror.jpg", class: 'rounded pic-main') %>
-    </div>
+     <% @monkey.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+        <%= cl_image_tag photo.key, height: 444, width: 650, crop: :scale %>
+      </div>
+    <% end %>
   </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -29,19 +25,25 @@
         <div class="monkey-species"><%= @monkey.species %></div>
         <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
         <div class="monkey-description"><%= @monkey.description %></div>
+        <div class= "buttons">
+          <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
+          <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      
+        <%= link_to "Rescue Monkey", getaways_path, class: 'rescue-button btn btn-primary'  %>
+
         <%= form_for(@getaway) do |f| %>
         <%= f.hidden_field :monkey_id, value: @monkey.id %>
           <%= f.submit "Rescue Monkey", class: 'rescue-button btn btn-primary'%>
         <% end %>
+
     </div>
   </div>
   <div class="container img-gallery">
-    <div class="img-1 rounded">
-    </div>
-    <div class="img-2 rounded">
-    </div>
-    <div class="img-3 rounded">
-    </div>
-    <div class="img-4 rounded">
+    <% @monkey.photos.each do |photo| %>
+      <div class="rounded">
+        <%= cl_image_tag photo.key, height: 200, width: 262, crop: :scale %>
+      </div>
+    <% end %>
     </div>
   </div>
