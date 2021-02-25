@@ -5,6 +5,20 @@
       <h5>Save A Monkey Today</h5>
     </div>
   <% end %>
+  <div class="nav-search">
+    <div class="nav-search-field">
+      <%= form_tag monkeys_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by species or name"
+      %>
+    </div>
+  <div class="nav-search-button">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
   <div class="nav-bar-user">
   <ul class="navbar-nav mr-auto">
     <%if user_signed_in? %>
