@@ -8,19 +8,26 @@ class GetawaysController < ApplicationController
     @getaways.each do |getaway|
       @monkeys << Monkey.find(getaway.monkey_id)
     end
+    @monkeys.reverse
   end
   def show 
+    @getaway = Getaway.create(
 
+    )
   end
 
   def new
-    @getaway = Getaway.new
+   
   end
 
-  def create
-    user_id = params[:id]
-    monkey_id = params[:monkey_id]
-    raise
-    @getaway = Getaway.create()
+  def create 
+    @getaway = Getaway.new(
+      date: params[:getaway]["date"],
+      monkey_id: params[:getaway]["monkey_id"],
+      user_id: current_user.id
+    )
+    if  @getaway.save
+      redirect_to getaways_path
+    end
   end
 end

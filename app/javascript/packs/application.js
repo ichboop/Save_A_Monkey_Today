@@ -31,8 +31,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 
+// Flatpickr
+import { initFlatpickr } from "../plugins/flatpickr";
+
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFlatpickr();
 })
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
