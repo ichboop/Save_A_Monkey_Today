@@ -3,7 +3,11 @@
 
   <% @getaways.each do |getaway| %>
   <div class="monkey-card">
+  <% if getaway.monkey.photos.first %>
+    <%= cl_image_tag getaway.monkey.photos.first.key, height: 250, width: 377, crop: :scale, class: "getaway-monkey-image" %>
+  <% else %>
     <img class="getaway-monkey-image" src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1510&q=80" alt="">
+  <% end %>
     <div class="getaway-content">
     <% if Date.today <= getaway.date %>
       <h2>Awesome! You will save <span class="span-red"><%= getaway.monkey.name  %></span> on <%= getaway.date.strftime("%A, %b %d")  %> </h2>
@@ -17,3 +21,5 @@
    <% end %>
    
 </div>
+
+
