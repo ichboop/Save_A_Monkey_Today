@@ -31,17 +31,31 @@ body,a, li, ul {
   font-size: 60px;
   font-weight: bolder;
   padding-top: 0;
+  color: #aa2b1d;
 }
 
 .monkey-species {
-  color: rgba(53, 53, 53, 0.788);
+  color: #cc561e;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.monkey-address {
+color: #beca5c;
+font-weight: bold;
+font-size: 30px;
+}
+
+.monkey-text {
+  color: #ef8d32;
   font-weight: bold;
   font-size: 30px;
 }
 
 .monkey-city {
-  color: rgb(99, 99, 99);
-  padding-top: 8px;
+  color: #beca5c;
+  font-weight: bold;
+  font-size: 30px;
   padding-bottom: 45px;
 }
 

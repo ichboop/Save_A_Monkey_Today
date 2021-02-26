@@ -6,7 +6,8 @@
       <%= simple_form_for @monkey do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :city %>
+        <%= f.input :city, :label => "Destination" %>
+        <%= f.input :address %>
         <%= f.input :species %>
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
         <%= f.button :submit, class: 'btn btn-primary' %>
