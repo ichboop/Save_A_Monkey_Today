@@ -33,7 +33,7 @@ users.each do |user|
     name: Faker::Name.name,
     species: monkeySpecies[rand(0..monkeySpecies.size - 1)],
     city: Faker::Nation.capital_city,
-    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+    description: "Member of The Banana Splits, an all-animal band. She played the drums. Likes sports! She is 8 years old, and she is the best player on her team in just about every sport they play",
     user_id: user.id,
     address: Faker::Address.street_address)
     # longitude: Faker::Address.longitude,
