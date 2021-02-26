@@ -1,5 +1,5 @@
 <% if monkey.photos.first %>
-  <%= cl_image_tag monkey.photos.first.key, height: 168, width: 300, crop: :scale %>
+  <%= cl_image_tag monkey.photos.first.key, height: 168, width: 150, crop: :scale %>
 <% end %>
 <h2><%= monkey.name %></h2>
 <p><%= monkey.address %></p>
