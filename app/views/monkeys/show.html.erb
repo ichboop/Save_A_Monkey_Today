@@ -35,7 +35,11 @@
           <%= f.hidden_field :monkey_id, value: @monkey.id %>
           <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
         <% end %>
-      <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+      <% if current_user == @monkey.user %>
+        <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+
+    </div>
   </div>
 </div>
   <div class="container img-gallery">
