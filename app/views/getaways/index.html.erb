@@ -5,7 +5,11 @@
   <div class="monkey-card">
     <img class="getaway-monkey-image" src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1510&q=80" alt="">
     <div class="getaway-content">
-      <h2>You saved <span class="span-red"><%= getaway.monkey.name  %></span></h2>
+    <% if Date.today <= getaway.date %>
+      <h2>Awesome! You will save <span class="span-red"><%= getaway.monkey.name  %></span> on <%= getaway.date.strftime("%A, %b %d")  %> </h2>
+    <% else %>
+      <h2>Awesome! You saved <span class="span-red"><%= getaway.monkey.name  %></span> on <%= getaway.date.strftime("%A, %b %d")  %> </h2>
+    <% end %>
       <h5>A wonderful <span class="span-red"> <%= getaway.monkey.species  %></span> from <span class="span-red"><%= getaway.monkey.city %></span></h5>
       <p><%= getaway.monkey.description  %></p>
     </div>
