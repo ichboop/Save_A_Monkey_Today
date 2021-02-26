@@ -1,28 +1,30 @@
 <div class="banner">
   <div class="container">
-    <h1>All Monkeys! in Berlin</h1>
+
+    <h1><%= @headline  %></h1>
   </div>
 </div>
 
 <div class="container mt-5">
   <div class="content-index" justify-content="center">
     <div >
-<!--       <h2 class="text-center">Berlin</h2>
- --><!--       <div class="cards">
- -->        <% @monkeys.each do |monkey| %>
-          <div class="card" margin-right="10000px">
-            <%= image_tag 'image_1.jpg', class: "mimg"%>
-            <h4><%= monkey.name %></h4>
-            <p class= "species"><%= monkey.species %></p>
-            <p><%= monkey.description %></p>
-            <%= link_to "Show Details", monkey_path(monkey), class: "btn btn-primary" %>
-          </div>
+      <% @monkeys.each do |monkey| %>
+      <div class="card" margin-right="10000px">
+        <% if monkey.photos.first %>
+          <%= cl_image_tag monkey.photos.first.key, height: 168, width: 300, crop: :scale, class: "mimg" %>
+        <% else %>
+          <%= image_tag 'image_1.jpg', class: "mimg"%>
         <% end %>
-<!--       </div>
- -->    </div>
+        <h4><%= monkey.name %></h4>
+        <p class= "species"><%= monkey.species %></p>
+        <p><%= monkey.description %></p>
+        <%= link_to "Show Details", monkey_path(monkey), class: "btn btn-primary" %>
+      </div>
+      <% end %>
+  </div>
     <div id="map" style="width: 100%; height: 600px;" class="sticky"
         data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">>
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>

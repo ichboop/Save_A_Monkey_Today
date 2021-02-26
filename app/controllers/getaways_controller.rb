@@ -8,7 +8,7 @@ class GetawaysController < ApplicationController
     @getaways.each do |getaway|
       @monkeys << Monkey.find(getaway.monkey_id)
     end
-    @monkeys.reverse
+    @getaways = @getaways.reverse
   end
   def show 
     @getaway = Getaway.create
