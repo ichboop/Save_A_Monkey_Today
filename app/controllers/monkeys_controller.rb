@@ -44,8 +44,8 @@ class MonkeysController < ApplicationController
   end
 
   def monkey_params
-    params.require(:monkey).permit(:name, :describtion, :species, :city, photos: [])
+    params.require(:monkey).permit(:name, :description, :species, :address, :city, photos: [])
   end
-  
+
 end
 
