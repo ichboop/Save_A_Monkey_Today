@@ -1,13 +1,13 @@
 <div class="container show-page">
 
-  <div class="class="container mt-5">
+  <div class="container mt-5">
     <div class="content-index" justify-content="center">
     <!-- class="col-sm-7 big-pic"> -->
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner carousel-pic">
           <% @monkey.photos.each_with_index do |photo, index| %>
           <div class="carousel-item <%= index == 0 ? "active" : "" %>">
-            <%= cl_image_tag photo.key, height: 444, width: 650, crop: :scale %>
+            <%= cl_image_tag photo.key, height: 444, width: 650, crop: :fit %>
         </div>
             <% end %>
       </div>
