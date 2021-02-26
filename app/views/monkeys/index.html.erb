@@ -11,7 +11,11 @@
  --><!--       <div class="cards">
  -->        <% @monkeys.each do |monkey| %>
           <div class="card" margin-right="10000px">
-            <%= image_tag 'image_1.jpg', class: "mimg"%>
+            <% if monkey.photos.first %>
+              <%= cl_image_tag monkey.photos.first.key, height: 168, width: 300, crop: :scale, class: "mimg" %>
+            <% else %>
+              <%= image_tag 'image_1.jpg', class: "mimg"%>
+            <% end %>
             <h4><%= monkey.name %></h4>
             <p class= "species"><%= monkey.species %></p>
             <p><%= monkey.description %></p>

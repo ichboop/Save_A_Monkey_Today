@@ -2,49 +2,51 @@
   <div class="row">
     <div class="col-sm-7 big-pic">
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner carousel-pic">
-     <% @monkey.photos.each_with_index do |photo, index| %>
-      <div class="carousel-item <%= index == 0 ? "active" : "" %>">
-        <%= cl_image_tag photo.key, height: 444, width: 650, crop: :scale %>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner carousel-pic">
+          <% @monkey.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+            <%= cl_image_tag photo.key, height: 444, width: 650, crop: :scale %>
+        </div>
+            <% end %>
       </div>
-    <% end %>
-  </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-  <div class="col-sm-5 monkey-description">
+  </div>
+  <div class="col-sm-6 monkey-description">
           <div class="monkey-name"><%= @monkey.name %></div>
           <div class="monkey-species"><%= @monkey.species %></div>
+           <div class="monkey-text">I life at::</div>
+          <div class="monkey-address"><i class="fas fa-map-marker-alt"></i> <%= @monkey.address %></div>
+          <div class="monkey-text">Please help me go to:</div>
           <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
           <div class="monkey-description"><%= @monkey.description %></div>
           <div class= "buttons">
         </div>
-      
         <%= simple_form_for(@getaway) do |f| %>
           <%= f.input :date, as: :string, label: false, required: true, input_html: {class: "datepicker"} %>
           <%= f.hidden_field :monkey_id, value: @monkey.id %>
           <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
         <% end %>
-
       <% if current_user == @monkey.user %>
         <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
 
     </div>
   </div>
+</div>
   <div class="container img-gallery">
     <% @monkey.photos.each do |photo| %>
-      <div class="rounded">
-        <%= cl_image_tag photo.key, height: 200, width: 262, crop: :scale %>
-      </div>
-    <% end %>
+    <div class="rounded">
+    <%= cl_image_tag photo.key, height: 200, width: 262, crop: :scale %>
     </div>
+    <% end %>
   </div>
+</div>
