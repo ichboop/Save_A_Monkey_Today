@@ -86,3 +86,11 @@ a:-webkit-any-link {
 .dropdown-item {
   color: #242424c0;
 }
+
+.monkey-logo {
+background: asset-url("440monkey.svg") no-repeat center center;
+background-size: cover;
+display: inline-block;
+height: 50px;
+width: 55%;
+}
