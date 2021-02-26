@@ -30,8 +30,8 @@
     <div class="homeflex-item title">
       <h1>Save a monkey today</h1>
       <%= form_tag monkeys_path, method: :get, class:"searchbar" do %>
-      <%= text_field_tag :address,
-        params[:address],
+      <%= text_field_tag :query,
+        params[:query],
         class: "form-control",
         placeholder: "Enter your city"
       %>

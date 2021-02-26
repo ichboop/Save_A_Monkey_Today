@@ -5,10 +5,20 @@ class MonkeysController < ApplicationController
     @headline = "All monkeys!"
     if params[:query].present?
       sql_query = "name ILIKE :query OR species ILIKE :query"
-      @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%")
+      @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%").geocoded + (Monkey.near(params[:query], 50))
       @headline = "You searched for #{params[:query]}? Here are your results!"
     else
       @monkeys = Monkey.all
+    end
+
+    # the `geocoded` scope filters only monkeys with coordinates (latitude & longitude)
+    @markers = @monkeys.map do |monkey|
+      {
+        lat: monkey.latitude,
+        lng: monkey.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { monkey: monkey }),
+        image_url: helpers.asset_url('440monkey.svg')
+      }
     end
   end
 
