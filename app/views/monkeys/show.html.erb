@@ -1,7 +1,6 @@
 <div class="container show-page">
-  <div class="row">
+  <div class="row" justify-content="center>
     <div class="col-sm-7 big-pic">
-
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner carousel-pic">
           <% @monkey.photos.each_with_index do |photo, index| %>
@@ -19,23 +18,23 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </div>
-  <div class="col-sm-6 monkey-description">
-          <div class="monkey-name"><%= @monkey.name %></div>
-          <div class="monkey-species"><%= @monkey.species %></div>
-           <div class="monkey-text">I life at::</div>
-          <div class="monkey-address"><i class="fas fa-map-marker-alt"></i> <%= @monkey.address %></div>
-          <div class="monkey-text">Please help me go to:</div>
-          <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
-          <div class="monkey-description"><%= @monkey.description %></div>
-          <div class= "buttons">
-        </div>
-        <%= simple_form_for(@getaway) do |f| %>
-          <%= f.input :date, as: :string, label: false, required: true, input_html: {class: "datepicker"} %>
-          <%= f.hidden_field :monkey_id, value: @monkey.id %>
-          <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
-        <% end %>
-      <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+    <div class="col-sm-6 monkey-description">
+            <div class="monkey-name"><%= @monkey.name %></div>
+            <div class="monkey-species"><%= @monkey.species %></div>
+             <div class="monkey-text">I life at::</div>
+            <div class="monkey-address"><i class="fas fa-map-marker-alt"></i> <%= @monkey.address %></div>
+            <div class="monkey-text">Please help me go to:</div>
+            <div class="monkey-city"><i class="fas fa-map-marker-alt"></i> <%= @monkey.city %></div>
+            <div class="monkey-description"><%= @monkey.description %></div>
+            <div class= "buttons">
+          </div>
+          <%= simple_form_for(@getaway) do |f| %>
+            <%= f.input :date, as: :string, label: false, required: true, input_html: {class: "datepicker"} %>
+            <%= f.hidden_field :monkey_id, value: @monkey.id %>
+            <%= f.submit "Rescue Monkey", class: "btn btn-primary" %>
+          <% end %>
+        <%= link_to "Delete Monkey", monkey_path(@monkey), class: "rescue-button btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
   </div>
 </div>
   <div class="container img-gallery">
