@@ -3,6 +3,21 @@ body,a, li, ul {
   line-height: 1;
 }
 
+.container-monkey {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container-show-left {
+  flex: 1 1 55%;
+}
+
+.container-show-right {
+  flex: 1 1 40%;
+}
+
 .show-page {
   margin-top: 15px;
 }
