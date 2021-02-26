@@ -21,31 +21,28 @@ users = []
 end
 
 puts "Users created!"
-puts "Creating 1 monkey and 1 getaway for each user..."
+puts "Creating a lot of monkeys..."
 
 monkeySpecies = ["Aye-aye", "Baboon", "Flying lemur", "Gibbon", "Gorilla", "Green monkey", "Lemur"]
 
 monkeys = []
 
 users.each do |user|
+  10.times do
     monkey = Monkey.create(
     name: Faker::Name.name,
     species: monkeySpecies[rand(0..monkeySpecies.size - 1)],
     city: Faker::Nation.capital_city,
-    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+    description: "Member of The Banana Splits, an all-animal band. She played the drums. Likes sports! She is 8 years old, and she is the best player on her team in just about every sport they play",
     user_id: user.id,
     address: Faker::Address.street_address)
     # longitude: Faker::Address.longitude,
     # latitude: Faker::Address.latitude)
-    Getaway.create(
-      date: Date.new(2001,2,3),
-      monkey_id: monkey.id,
-      user_id: user.id
-    )
     monkeys << monkey
+  end
 end
 
-puts " 1 monkey for each user created"
+puts "A lot of monkeys created!"
 puts "Creating random getaways..."
 
 200.times do
