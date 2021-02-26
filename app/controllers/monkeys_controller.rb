@@ -2,10 +2,11 @@ class MonkeysController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     @monkeys = Monkey.all
-
+    @headline = "All monkeys!"
     if params[:query].present?
       sql_query = "name ILIKE :query OR species ILIKE :query"
       @monkeys = Monkey.where(sql_query, query: "%#{params[:query]}%")
+      @headline = "You searched for #{params[:query]}? Here are your results!"
     else
       @monkeys = Monkey.all
     end
@@ -43,8 +44,8 @@ class MonkeysController < ApplicationController
   end
 
   def monkey_params
-    params.require(:monkey).permit(:name, :describtion, :species, :city, photos: [])
+    params.require(:monkey).permit(:name, :description, :species, :address, :city, photos: [])
   end
-  
+
 end
 

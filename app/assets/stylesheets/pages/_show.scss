@@ -37,7 +37,8 @@ body,a, li, ul {
 .monkey-species {
   color: #cc561e;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 40px;
+  padding-bottom: 20px;
 }
 
 .monkey-address {
@@ -56,19 +57,38 @@ font-size: 30px;
   color: #beca5c;
   font-weight: bold;
   font-size: 30px;
-  padding-bottom: 45px;
+  padding-bottom: 0px;
 }
 
-.col-sm-5.monkey-description {
-  padding-left: 12px !important;
+.button1 {
+  display: flex;
+  // display: row;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 250px;
 }
+
+// .monkey-description {
+//   padding-left: 12px !important;
+// }
+// .col-sm-5.monkey-description {
+//   padding-left: 12px !important;
+// }
 
 .col-sm-8 {
   padding-right: 0px !important;
 }
 
 .rescue-button {
-  margin-top: 40px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.form-control-show {
+height: 35px;
+width: 120px;
+text-align: center;
 }
 
 .img-gallery {
