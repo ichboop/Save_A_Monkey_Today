@@ -1,1 +1,2 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+A airbnb style "Monkey Saving Business", similar to the famous short term renting website, Save-A-Monkey alows the user to register/login and choose a location and time to "Save" a monkey. A weeklong Web Development Challenge during the Le Wagon Fullstack developer course. The website was created by four people.
